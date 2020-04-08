@@ -1,11 +1,7 @@
 cmake_minimum_required(VERSION 3.11)
-project(even)
+project(thread_pool_example)
 
-SET(CMAKE_BUILD_TYPE "Debug")
-SET(CMAKE_CXX_FLAGS_DEBUG "$ENV{CXXFLAGS} -O0 -Wall -g2 -ggdb")
-SET(CMAKE_CXX_FLAGS_RELEASE "$ENV{CXXFLAGS} -O3 -Wall")
+add_executable(thread_pool_example thread_pool_example.cpp)
 
-set(SOURCE_FILES  thread_pool_simple.c)
-add_executable(even ${SOURCE_FILES} )
+TARGET_LINK_LIBRARIES(thread_pool_example -lpthread)
 
-TARGET_LINK_LIBRARIES(even pthread)
